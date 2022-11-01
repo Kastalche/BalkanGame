@@ -1,0 +1,15 @@
+C:\Users\roron\Desktop\BalkanGame\bin\Debug\net6.0\BalkanGame.exe
+C:\Users\roron\Desktop\BalkanGame\bin\Debug\net6.0\BalkanGame.deps.json
+C:\Users\roron\Desktop\BalkanGame\bin\Debug\net6.0\BalkanGame.runtimeconfig.json
+C:\Users\roron\Desktop\BalkanGame\bin\Debug\net6.0\BalkanGame.dll
+C:\Users\roron\Desktop\BalkanGame\bin\Debug\net6.0\ref\BalkanGame.dll
+C:\Users\roron\Desktop\BalkanGame\bin\Debug\net6.0\BalkanGame.pdb
+C:\Users\roron\Desktop\BalkanGame\obj\Debug\net6.0\BalkanGame.csproj.AssemblyReference.cache
+C:\Users\roron\Desktop\BalkanGame\obj\Debug\net6.0\BalkanGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\roron\Desktop\BalkanGame\obj\Debug\net6.0\BalkanGame.AssemblyInfoInputs.cache
+C:\Users\roron\Desktop\BalkanGame\obj\Debug\net6.0\BalkanGame.AssemblyInfo.cs
+C:\Users\roron\Desktop\BalkanGame\obj\Debug\net6.0\BalkanGame.csproj.CoreCompileInputs.cache
+C:\Users\roron\Desktop\BalkanGame\obj\Debug\net6.0\BalkanGame.dll
+C:\Users\roron\Desktop\BalkanGame\obj\Debug\net6.0\ref\BalkanGame.dll
+C:\Users\roron\Desktop\BalkanGame\obj\Debug\net6.0\BalkanGame.pdb
+C:\Users\roron\Desktop\BalkanGame\obj\Debug\net6.0\BalkanGame.genruntimeconfig.cache
