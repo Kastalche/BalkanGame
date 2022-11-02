@@ -1,5 +1,7 @@
 public class GameManager{
     private IState currentState;
+    GameInterface display= new GameInterface();
+    List<Teams> teams=new List<Teams>; // adding team after creating them
 
     public GameManager(Parameters)
     {
@@ -15,14 +17,14 @@ public class GameManager{
                     break;
 
                 case States.BattleState:
-                    currentState = new BattleStatethis);
+                    currentState = new BattleState(this);
                     break;
 
                 case States.EndBattleState:
                     currentState = new OrderPreparationState(this);
                     break;
 
-                case State.sGameStartState.cs:
+                case State.GameStartState.cs:
                     currentState = new GameStartState(this);
                     break;
                 default:
