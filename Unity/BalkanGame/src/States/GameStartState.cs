@@ -1,8 +1,11 @@
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 public class BGameStartState : IState
     {
+        GameInterface display= new GameInterface();
         public void Start()
         {
-            throw new NotImplementedException();
+            display.WelcomePlayer();
         }
         public void Destroy()
         {

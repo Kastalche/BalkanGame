@@ -5,11 +5,14 @@ namespace BalkanGame.src.States
 {
     public class PrepareForBattleState : IState
     {
+        GameInterface display= new GameInterface();
         Random random = new Random();
 
         public void Start()
         {
-            throw new NotImplementedException();
+            FillTeam();
+            display.DisplayTeams();
+
         }
 
         public void FillTeam(Team team){
@@ -39,7 +42,7 @@ namespace BalkanGame.src.States
 
         public void Destroy()
         {
-            throw new NotImplementedException();
+            
         }
         
     }

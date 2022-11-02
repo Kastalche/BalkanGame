@@ -1,3 +1,5 @@
+using System.Security.Cryptography;
+using System.ComponentModel.Design;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,21 +10,47 @@ namespace BalkanGame.src.States
 {
     public class BattleState : IState
     {
-
-         Hero currentHero;
+        int round=1;
+        Hero currentHero;
+        
         public void Start()
         {
-            throw new NotImplementedException();
+            dispay.BattleBegin();
         }
         public void Destroy()
         {
             throw new NotImplementedException();
         }
 
-        public void Atack(Atack atack)
+        private void Atack(Atack atack)
         {
             atack.receiver.hp-currentHero.ammountDamage;
+            display.AtackReceived();
         }
+
+        public void BotAtackTurn(Team botTeam)){
+            foreach(hero in botTeam)
+            {
+                Atack(new Atack(hero,RandomHeroFromTeam()));
+            }
+            //TODO: Merge player and bot attacks in one
+        }
+
+        public void PlayerAtackTurn(Team playerTeam)
+        {
+            foreach (var hero in playerTeam)
+            {
+                //TODO: Choose receiver for the attack; 
+            }
+        }
+        private Hero RandomHeroFromTeam(team){
+            Random random = new Random();
+            indexOfRandomHero=random.Next(1,team.Count);
+
+            return team[indexOfRandomHero];
+        }
+
+
 
     }
 }
