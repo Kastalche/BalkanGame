@@ -2,8 +2,8 @@ namespace BalkanGame
 {
     public abstract class Hero
     {
-        private int HP { get; set; }
-        private int damage { get; set; }
+        public int HP { get; set; }
+        public int damage { get; set; }
 
         private int XP { get; set; }
 

@@ -1,5 +1,7 @@
 
 
+using System;
+using System.Globalization;
 namespace BalkanGame.src
 {
     public class Atack
@@ -9,9 +11,11 @@ namespace BalkanGame.src
         public Hero receiver { get; set; }
 
 
-        public Atack()
+        public Atack(Hero sender, hero receiver)
         {
-
+            this.sender=sender;
+            this.receiver=receiver;
+            this.ammountDamage=sender.damage;
         }
     }
 }
