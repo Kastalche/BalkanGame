@@ -1,3 +1,4 @@
+using System.ComponentModel.Design;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +17,9 @@ namespace BalkanGame
             throw new NotImplementedException();
         }
 
-        public void HealTeamMate()
+        public void HealTeamMate(Hero hero)
         {
-
+            hero.HP+=25;
         }
     }
 }
