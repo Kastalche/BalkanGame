@@ -1,7 +1,9 @@
 public class GameManager{
-    private IState currentState;
-    GameInterface display= new GameInterface();
-    List<Teams> teams=new List<Teams>; // adding team after creating them
+    // private IState currentState;
+    // GameInterface display= new GameInterface();
+    // List<Teams> teams=new List<Teams>; // adding team after creating them
+
+    gameData game=new GameData();// някъде трябва да подавам данни, ще видим кое къде и на кой етап ще се подава ;()
 
     public GameManager(Parameters)
     {

@@ -1,3 +1,4 @@
+using System.Net.Http;
 using System.Security.Cryptography;
 using System.ComponentModel.Design;
 using System;
@@ -22,8 +23,7 @@ namespace BalkanGame.src.States
             throw new NotImplementedException();
         }
 
-        private void Atack(Atack atack)
-        {
+        private void Atack(Atack atack) {
             atack.receiver.hp-currentHero.ammountDamage;
             display.AtackReceived();
         }
@@ -36,11 +36,14 @@ namespace BalkanGame.src.States
             //TODO: Merge player and bot attacks in one
         }
 
-        public void PlayerAtackTurn(Team playerTeam)
-        {
+        public void PlayerAtackTurn(Team playerTeam){
             foreach (var hero in playerTeam)
-            {
-                //TODO: Choose receiver for the attack; 
+            { if(!IsGrandma)
+                //Atack(hero, chosehero for receiver)
+                else
+                {
+                    hero.HealTeamMate(ChooseHeroForReceiver);
+                }
             }
         }
         private Hero RandomHeroFromTeam(team){
@@ -48,6 +51,18 @@ namespace BalkanGame.src.States
             indexOfRandomHero=random.Next(1,team.Count);
 
             return team[indexOfRandomHero];
+        }
+
+        public void AtackHero(Hero sender)
+        {
+            var receiver=ChooseHeroForReceiver();
+            var atack= new Atack(sender,receiver);
+            Atack(atack);
+        }
+
+        public Hero ChooseHeroForReceiver()
+        {
+
         }
 
 

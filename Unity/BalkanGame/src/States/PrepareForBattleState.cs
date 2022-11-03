@@ -12,7 +12,6 @@ namespace BalkanGame.src.States
         {
             FillTeam();
             display.DisplayTeams();
-
         }
 
         public void FillTeam(Team team){
