@@ -8,9 +8,5 @@ namespace BalkanGame
         {
         }
 
-        public override void TakeDmg(float dmg)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
