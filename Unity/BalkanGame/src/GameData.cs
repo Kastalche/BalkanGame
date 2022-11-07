@@ -1,15 +1,18 @@
 using System.Collections.Generic;
-public class GameData{
-    GameInterface display=new GameInterface();
-    string playerName;
+using BalkanGame;
+using BalkanGame.States;
 
-    List<Team> teams = new List<Team>();
+public class GameData
+{
+    public string playerName;
 
-    Team currentTeam;
-    Hero currentHero;
+    public List<Team> teams = new List<Team>();
 
-    state currentState;
-    Team winner;
+    public Team currentTeam;
+    public Hero currentHero;
 
-    
+    public IState currentState;
+    public Team winner;
+
+
 }

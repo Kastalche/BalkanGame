@@ -11,11 +11,11 @@ namespace BalkanGame.src
         public Hero receiver { get; set; }
 
 
-        public Atack(Hero sender, hero receiver)
+        public Atack(Hero sender, Hero receiver)
         {
-            this.sender=sender;
-            this.receiver=receiver;
-            this.ammountDamage=sender.damage;
+            this.sender = sender;
+            this.receiver = receiver;
+            this.ammountDamage = sender.damage;
         }
     }
 }

@@ -8,10 +8,17 @@ namespace BalkanGame.src.States
 {
     public class EndBattleState : IState
     {
+        private readonly GameManager game;
+
+        public EndBattleState(GameManager game)
+        {
+            this.game = game;
+        }
+
         public void Start()
         {
-            display.ShowWinner();
-            display.NewGame();
+            game.gameInterface.ShowWinner();
+            game.gameInterface.NewGame();
         }
         public void Destroy()
         {

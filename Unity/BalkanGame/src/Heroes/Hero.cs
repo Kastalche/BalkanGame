@@ -6,7 +6,7 @@ namespace BalkanGame
         public int damage { get; set; }
 
         private int XP { get; set; }
-        private int level { get; set;}
+        private int level { get; set; }
 
         public Hero(int HP, int damage)
         {
@@ -14,7 +14,7 @@ namespace BalkanGame
             this.damage = damage;
 
             level = 1;
-            XP=0;
+            XP = 0;
         }
 
         // public abstract void Atack(List<Actor> team, Actor atackedActor);
@@ -22,8 +22,9 @@ namespace BalkanGame
         {
             return HP > 0;
         }
-        public void TakeDmg(float dmg){
-            HP=HP-dmg;
+        public void TakeDmg(int dmg)
+        {
+            HP = HP - dmg;
         }
 
     }

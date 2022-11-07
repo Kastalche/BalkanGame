@@ -1,4 +1,4 @@
-    public enum States {
-        GameStartState, PrepareForBattleState, BattleState, EndBattleState
-    }
+public enum States
+{
+    GameStartState, PrepareForBattleState, BattleState, EndBattleState
 }

@@ -12,12 +12,18 @@ namespace BalkanGame.src.States
 {
     public class BattleState : IState
     {
-        int round=1;
-        Hero currentHero; // TODO: GO to game data ;)
-        
+        private readonly GameManager game;
+
+        public BattleState(GameManager game)
+        {
+            this.game = game;
+        }
+        int round = 1;
+        ///public Hero currentHero; // TODO: GO to game data ;)
+
         public void Start()
         {
-            dispay.BattleBegin();
+            game.gameInterface.BattleBegin();
             PlayerAtackTurn();
             //display
             BotAtackTurn();
@@ -28,48 +34,61 @@ namespace BalkanGame.src.States
             throw new NotImplementedException();
         }
 
-        private void Atack(Hero sender)) {
-            Hero receiver=ChooseHeroForReceiver();
-            
+        private void Atack(Hero sender)
+        {
+            Hero receiver = ChooseHeroForReceiver();
+
             //new Atack(sender,receiver); Think about putting atack somewhere? Or if u really need the class atack or if u can make it good with delegate and actions
             receiver.TakeDmg(sender.damage);
-            display.AtackReceived();
+            game.gameInterface.AtackReceived();
         }
 
-        public void BotAtackTurn(Team botTeam)){
-            foreach(hero in botTeam)
+        private void BotAtackTurn(Team botTeam)
+        {
+            foreach (var hero in botTeam.heroes)
             {
-                Atack(new Atack(hero,RandomHeroFromTeam()));
+                if (hero is Grandma)
+                {
+
+                }
+                else
+                {
+                    Atack(new Atack(hero, RandomHeroFromTeam(your team)));
+                }
             }
             //TODO: Merge player and bot attacks in one
         }
 
-        public void PlayerAtackTurn(Team playerTeam){
-            foreach (var hero in playerTeam)
-            { if(!IsGrandma)
+        private void PlayerAtackTurn(Team playerTeam)
+        {
+            foreach (var hero in playerTeam.heroes)
             {
-                AtackHero(hero, ChooseHeroForReceiver())
-               }
-                  else
+                if (hero is Grandma)
                 {
-                    hero.HealTeamMate(ChooseHeroForReceiver);
+                    hero.HealTeamMate(ChooseHeroForReceiver);//TODO: implement one method to merge heal and atack depending on hero type ;)
+                }
+                else
+                {
+                    AtackHero(hero, ChooseHeroForReceiver());
                 }
             }
         }
-        private Hero RandomHeroFromTeam(team){
+        private Hero RandomHeroFromTeam(Team team)
+        {
             Random random = new Random();
-            indexOfRandomHero=random.Next(1,team.Count);
+            int indexOfRandomHero = random.Next(1, team.heroes.Count);
 
-            return team[indexOfRandomHero];
+            return team.heroes[indexOfRandomHero];
         }
 
         private void AtackHero(Hero sender)
         {
-            Atack(new Atack(sender,ChooseHeroForReceiver()););
+            //Atack(new Atack(sender, ChooseHeroForReceiver()));
         }
 
         public Hero ChooseHeroForReceiver()
         {
+            return null;
             //Invoke menu selected player :) 
         }
 

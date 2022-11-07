@@ -1,16 +1,24 @@
 using System.Diagnostics;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-public class BGameStartState : IState
+using BalkanGame.States;
+
+public class GameStartState : IState
+{
+    private readonly GameManager game;
+
+    public GameStartState(GameManager game)
     {
-        GameData game= new GameData;
-        GameInterface display= new GameInterface();
-        public void Start()
-        {
-            game.playerName=display.EnterName();
-            display.WelcomePlayer();
-        }
-        public void Destroy()
-        {
-            throw new NotImplementedException();
-        }
+        this.game = game;
+    }
+
+    GameData gameData = new GameData();
+    public void Start()
+    {
+        game.gameData.playerName = game.gameInterface.EnterName();
+        game.gameInterface.WelcomePlayer();
+    }
+    public void Destroy()
+    {
+    }
+}
