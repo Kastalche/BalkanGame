@@ -6,7 +6,6 @@ namespace BalkanGame
         public int damage { get; set; }
 
         private int XP { get; set; }
-
         private int level { get; set;}
 
         public Hero(int HP, int damage)
@@ -23,7 +22,9 @@ namespace BalkanGame
         {
             return HP > 0;
         }
-        public abstract void TakeDmg(float dmg);
+        public void TakeDmg(float dmg){
+            HP=HP-dmg;
+        }
 
     }
 }

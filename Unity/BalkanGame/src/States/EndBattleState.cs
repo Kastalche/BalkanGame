@@ -10,7 +10,8 @@ namespace BalkanGame.src.States
     {
         public void Start()
         {
-            throw new NotImplementedException();
+            display.ShowWinner();
+            display.NewGame();
         }
         public void Destroy()
         {

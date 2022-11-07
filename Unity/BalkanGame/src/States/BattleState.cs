@@ -1,3 +1,4 @@
+using System.Net.Sockets;
 using System.Net.Http;
 using System.Security.Cryptography;
 using System.ComponentModel.Design;
@@ -12,19 +13,26 @@ namespace BalkanGame.src.States
     public class BattleState : IState
     {
         int round=1;
-        Hero currentHero;
+        Hero currentHero; // TODO: GO to game data ;)
         
         public void Start()
         {
             dispay.BattleBegin();
+            PlayerAtackTurn();
+            //display
+            BotAtackTurn();
+            //display
         }
         public void Destroy()
         {
             throw new NotImplementedException();
         }
 
-        private void Atack(Atack atack) {
-            atack.receiver.hp-currentHero.ammountDamage;
+        private void Atack(Hero sender)) {
+            Hero receiver=ChooseHeroForReceiver();
+            
+            //new Atack(sender,receiver); Think about putting atack somewhere? Or if u really need the class atack or if u can make it good with delegate and actions
+            receiver.TakeDmg(sender.damage);
             display.AtackReceived();
         }
 
@@ -39,8 +47,10 @@ namespace BalkanGame.src.States
         public void PlayerAtackTurn(Team playerTeam){
             foreach (var hero in playerTeam)
             { if(!IsGrandma)
-                //Atack(hero, chosehero for receiver)
-                else
+            {
+                AtackHero(hero, ChooseHeroForReceiver())
+               }
+                  else
                 {
                     hero.HealTeamMate(ChooseHeroForReceiver);
                 }
@@ -53,16 +63,14 @@ namespace BalkanGame.src.States
             return team[indexOfRandomHero];
         }
 
-        public void AtackHero(Hero sender)
+        private void AtackHero(Hero sender)
         {
-            var receiver=ChooseHeroForReceiver();
-            var atack= new Atack(sender,receiver);
-            Atack(atack);
+            Atack(new Atack(sender,ChooseHeroForReceiver()););
         }
 
         public Hero ChooseHeroForReceiver()
         {
-
+            //Invoke menu selected player :) 
         }
 
 
