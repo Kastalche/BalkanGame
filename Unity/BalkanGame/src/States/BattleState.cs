@@ -1,3 +1,4 @@
+using System.Net;
 using System.Net.Mail;
 using System.Net.Sockets;
 using System.Net.Http;
@@ -52,7 +53,7 @@ namespace BalkanGame.src.States
 
         private void Atack(Hero sender){
             Hero receiver = ChooseHeroForReceiver();
-            
+
             if(sender.IsHealer)
             {
                 receiver.HP+sender.damage;
@@ -67,14 +68,7 @@ namespace BalkanGame.src.States
         private void BotAtackTurn(Team botTeam){
             foreach (var hero in botTeam.heroes)
             {
-                if (hero is Grandma)
-                {
-
-                }
-                else
-                {
-                    Atack(new Atack(hero, RandomHeroFromTeam(your team)));
-                }
+                Atack(new Atack(hero, RandomHeroFromTeam(your team)));
             }
             //TODO: Merge player and bot attacks in one
         }
