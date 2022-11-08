@@ -19,6 +19,8 @@ namespace BalkanGame.src.States
         {
             game.gameInterface.ShowWinner();
             game.gameInterface.NewGame();
+            //chose if you want to start a new game
+            game.Transition(States.GameStartState);
         }
         public void Destroy()
         {
