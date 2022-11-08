@@ -10,6 +10,7 @@ namespace BalkanGame
     {
         public Grandma(int HP, int damage) : base(HP, damage)
         {
+            IsHealer=true;
         }
 
 

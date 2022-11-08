@@ -75,4 +75,8 @@ public class GameInterface : IDisplayable
     {
         throw new NotImplementedException();
     }
+
+    public void HealtTeamMate(){
+        
+    }
 }

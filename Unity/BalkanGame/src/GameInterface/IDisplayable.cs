@@ -8,4 +8,5 @@ public interface IDisplayable
     void ShowRoundSummary();
     void ShowWinner();
     void NewGame();
+     void HealtTeamMate();
 }

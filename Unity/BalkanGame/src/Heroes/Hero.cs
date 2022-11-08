@@ -7,6 +7,7 @@ namespace BalkanGame
 
         private int XP { get; set; }
         private int level { get; set; }
+        private bool IsHealer{ get; set; }
 
         public Hero(int HP, int damage)
         {
