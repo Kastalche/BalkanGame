@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Threading;
@@ -7,6 +8,20 @@ public class GameInterface : IDisplayable
 {
     ConsoleColor backgroundColor = ConsoleColor.DarkYellow;
     ConsoleColor foregroundColor = ConsoleColor.DarkYellow;
+
+    List<string> atacksStrings= new  List<string> (){
+        "spilled oil Kaliakra on the floor so {0} ",
+        "thowed a jar of Trushia  to {0}and made damage to",
+        "kicked {0} in his no no square",
+        "sold {0} to a gipsy ",
+        "Hypnotized {0} so and made him sell of his kaisieva collection to  poor students"
+    }
+// think of a way to put this {0} strings in the list string . replace * with the name maybe ;( i don't know.
+
+    
+    public void atacksStrings(Hero sender, hero Atacker){
+
+    }
 
     public string EnterName()
     {

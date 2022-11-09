@@ -8,5 +8,6 @@ public interface IDisplayable
     void ShowRoundSummary();
     void ShowWinner();
     void NewGame();
-     void HealtTeamMate();
+    void HealtTeamMate();
+    void Atack(Hero sender, hero Atacker); // or just object atack ;) dependig what u chose for the atack.
 }
